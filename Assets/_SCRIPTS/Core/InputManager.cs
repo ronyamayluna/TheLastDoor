@@ -101,6 +101,7 @@ public class InputManager : MonoBehaviour
             pauseAction.performed += OnPausePerformed;
         if (cancelAction != null)
             cancelAction.performed += OnCancelPerformed;
+        
 
         //Player Action Map
         EnablePlayerInput();
@@ -118,6 +119,8 @@ public class InputManager : MonoBehaviour
             EventBus.Instance.OnGamePaused += HandleGamePaused;
             EventBus.Instance.OnGameResumed += HandleGameResumed;
         }
+
+        
     }
 
     private void OnDisable()
@@ -147,6 +150,7 @@ public class InputManager : MonoBehaviour
             pauseAction.performed -= OnPausePerformed;
         if (cancelAction != null)
             cancelAction.performed -= OnCancelPerformed;
+        
     }
 
     private void Update()

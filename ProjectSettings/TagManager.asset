@@ -2,8 +2,11 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - Enemy
+  - NPC
+  - PickableObject
   layers:
   - Default
   - TransparentFX
@@ -47,3 +50,5 @@ TagManager:
   - name: Top
     uniqueID: 3685922723
     locked: 0
+  m_RenderingLayers:
+  - Default
