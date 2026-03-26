@@ -24,7 +24,7 @@ public class InputManager : MonoBehaviour
     private InputAction cancelAction;
     private InputAction zoomAction;
 
-    
+
     public Vector2 MoveInput { get; private set; }
     public Vector2 LookInput { get; private set; }
     public float ZoomInput { get; private set; }
@@ -34,7 +34,7 @@ public class InputManager : MonoBehaviour
     public bool SprintHeld { get; private set; }
     public bool CrouchHeld { get; private set; }
 
-    
+
     public System.Action OnJumpPressed;
     public System.Action OnAttackPressed;
     public System.Action OnInteractPressed;
@@ -75,7 +75,7 @@ public class InputManager : MonoBehaviour
             return;
         }
 
-        
+
 
         // connect Player Action Map
         moveAction = playerActionMap.FindAction("Move");
@@ -101,7 +101,12 @@ public class InputManager : MonoBehaviour
             pauseAction.performed += OnPausePerformed;
         if (cancelAction != null)
             cancelAction.performed += OnCancelPerformed;
-        
+
+        if (interactAction != null)
+        {
+            interactAction.Enable();
+        }
+
 
         //Player Action Map
         EnablePlayerInput();
@@ -120,7 +125,6 @@ public class InputManager : MonoBehaviour
             EventBus.Instance.OnGameResumed += HandleGameResumed;
         }
 
-        
     }
 
     private void OnDisable()
@@ -129,17 +133,18 @@ public class InputManager : MonoBehaviour
         if (inputActions != null)
             inputActions.Disable();
 
-        
+
         if (EventBus.Instance != null)
         {
             EventBus.Instance.OnGamePaused -= HandleGamePaused;
             EventBus.Instance.OnGameResumed -= HandleGameResumed;
         }
+
+        
     }
 
     private void OnDestroy()
     {
-       
         if (jumpAction != null)
             jumpAction.performed -= OnJumpPerformed;
         if (attackAction != null)
@@ -150,28 +155,27 @@ public class InputManager : MonoBehaviour
             pauseAction.performed -= OnPausePerformed;
         if (cancelAction != null)
             cancelAction.performed -= OnCancelPerformed;
-        
+
     }
 
     private void Update()
     {
-        
+
         UpdateInputValues();
     }
 
     private void UpdateInputValues()
     {
-        
+
         MoveInput = moveAction != null ? moveAction.ReadValue<Vector2>() : Vector2.zero;
         LookInput = lookAction != null ? lookAction.ReadValue<Vector2>() : Vector2.zero;
         SprintHeld = sprintAction != null && sprintAction.IsPressed();
         CrouchHeld = crouchAction != null && crouchAction.IsPressed();
         ZoomInput = zoomAction != null ? zoomAction.ReadValue<Vector2>().y : 0f;
 
-
     }
 
-  
+
     private void OnJumpPerformed(InputAction.CallbackContext context)
     {
         JumpPressed = true;
@@ -186,6 +190,7 @@ public class InputManager : MonoBehaviour
 
     private void OnInteractPerformed(InputAction.CallbackContext context)
     {
+        Debug.Log("InputManager: Interact performed");
         InteractPressed = true;
         OnInteractPressed?.Invoke();
     }
@@ -199,6 +204,7 @@ public class InputManager : MonoBehaviour
     {
         OnCancelPressed?.Invoke();
     }
+
 
 
     public void ResetButtonFlags()
@@ -224,10 +230,9 @@ public class InputManager : MonoBehaviour
             uiActionMap.Enable();
     }
 
-    
+
     private void HandleGamePaused()
     {
-       
         if (playerActionMap != null)
             playerActionMap.Disable();
 
