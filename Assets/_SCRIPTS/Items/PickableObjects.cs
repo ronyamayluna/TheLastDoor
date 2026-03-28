@@ -8,6 +8,6 @@ public class PickableObjects : MonoBehaviour
     {
         if (isPickedUp) return;
         isPickedUp = true;
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 }
