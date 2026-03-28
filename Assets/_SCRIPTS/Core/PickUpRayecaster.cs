@@ -22,7 +22,6 @@ public class CameraPickUp : MonoBehaviour
 
     public void TryPickUp()
     {
-
         RaycastHit hit;
 
         if (Physics.Raycast(transform.position, transform.forward, out hit, distance))
@@ -33,7 +32,6 @@ public class CameraPickUp : MonoBehaviour
             {
                 Debug.Log("Object picked up");
                 pickable.PickUpObject();
-
             }
         }
     }

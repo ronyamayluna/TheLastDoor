@@ -1,24 +1,43 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 namespace CameraDoorScript
 {
 	public class CameraOpenDoor : MonoBehaviour
 	{
-		public float DistanceOpen = 3;
-		void Update()
-		{
-			RaycastHit hit;
-			if (Physics.Raycast(transform.position, transform.forward, out hit, DistanceOpen))
-			{
-				if (hit.transform.GetComponent<DoorScript.Door>())
-				{
-					if (Input.GetKeyDown(KeyCode.E))
-						hit.transform.GetComponent<DoorScript.Door>().OpenDoor();
-				}
-			}
-		}
+        public float DoorDistanceOpen = 3;
+
+        private void OnEnable()
+        {
+            if (InputManager.Instance != null)
+            {
+                InputManager.Instance.OnInteractPressed += OpenDoorRayecast;
+            }
+        }
+
+        private void OnDisable()
+        {
+            if (InputManager.Instance != null)
+            {
+                InputManager.Instance.OnInteractPressed -= OpenDoorRayecast;
+            }
+        }
+
+        public void OpenDoorRayecast()
+        {
+            RaycastHit hit;
+
+            if (Physics.Raycast(transform.position, transform.forward, out hit, DoorDistanceOpen))
+            {
+                DoorScript.Door door = hit.transform.GetComponent<DoorScript.Door>();
+                if (door != null)
+                {
+                    door.OpenDoor();
+                }
+            }
+        }
 	}
 }
 
