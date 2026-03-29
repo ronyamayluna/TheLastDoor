@@ -7,7 +7,7 @@ namespace CameraDoorScript
 {
 	public class CameraOpenDoor : MonoBehaviour
 	{
-        public float DoorDistanceOpen = 3;
+        private float DoorDistanceOpen = 3;
 
         private void OnEnable()
         {

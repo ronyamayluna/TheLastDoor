@@ -190,7 +190,6 @@ public class InputManager : MonoBehaviour
 
     private void OnInteractPerformed(InputAction.CallbackContext context)
     {
-        Debug.Log("InputManager: Interact performed");
         InteractPressed = true;
         OnInteractPressed?.Invoke();
     }
