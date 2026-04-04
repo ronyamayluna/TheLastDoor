@@ -46,7 +46,7 @@ namespace Inventory
             }
         }
 
-        public AddItemsToInventoryGridResult AddItems(string itemId, int amount)
+        public AddItemsToInventoryGridResult AddItems(string itemId, int amount = 1)
         {
             var remainingAmount = amount;
             var itemsAddedToSlotsWithSameItemsAmount = AddToSlotsWithSameItems(itemId, remainingAmount, out var itemsAddedToSlotsWithSameItems);
@@ -56,10 +56,10 @@ namespace Inventory
                 return new AddItemsToInventoryGridResult(OwnerId, amount, itemsAddedToSlotsWithSameItemsAmount);
             }
 
-            // var itemsAddedToAvailableEmptySlotsAmount = AddToFirstAvailableEmptySlots(itemId, remainingAmount, out remainingAmount);
-            //var totalItemsAddedAmount = itemsAddedToSlotsWithSameItemsAmount + itemsAddedToAvailableEmptySlotsAmount;
+            var itemsAddedToAvailableEmptySlotsAmount = AddToFirstAvailableSlots(itemId, remainingAmount, out remainingAmount);
+            var totalItemsAddedAmount = itemsAddedToSlotsWithSameItemsAmount + itemsAddedToAvailableEmptySlotsAmount;
 
-            //return new AddItemsToInventoryGridResult(OwnerId, amount, totalItemsAddedAmount);
+            return new AddItemsToInventoryGridResult(OwnerId, amount, totalItemsAddedAmount);
         }
 
         public AddItemsToInventoryGridResult AddItems(Vector2Int slotCoords, string itemId, int amount = 1)
@@ -78,7 +78,7 @@ namespace Inventory
             {
                 var remainingItems = newValue - itemSlotCapacity;
                 var itemsToAddAmount = itemSlotCapacity - slot.Amount;
-                itemsAddedAmount = itemsToAddAmount;
+                itemsAddedAmount += itemsToAddAmount;
                 slot.Amount = itemSlotCapacity;
 
                 var result = AddItems(itemId, remainingItems);
@@ -158,12 +158,81 @@ namespace Inventory
                     {
                         continue;
                     }
+                    var slotItemCapacity = GetItemSlotCapacity(slot.ItemId);
+                    if (slot.Amount >= slotItemCapacity)
+                    {
+                        continue;
+                    }
+                    if (slot.ItemId != itemId)
+                    {
+                        continue;
+                    }
 
-                    //ar slotItemCapac
+                    var newValue = slot.Amount + remainingAmount;
+
+                    if (newValue > slotItemCapacity)
+                    {
+                        remainingAmount = newValue - slotItemCapacity;
+                        var itemsToAddAmount = slotItemCapacity - slot.Amount;
+                        itemsAddedAmount += itemsToAddAmount;
+                        slot.Amount = slotItemCapacity;
+
+                        if (remainingAmount == 0)
+                        {
+                            return itemsAddedAmount;
+                        }
+                    }
+                    else
+                    {
+                        itemsAddedAmount += remainingAmount;
+                        slot.Amount = newValue;
+                        remainingAmount = 0;
+                    }
+
                 }
+
             }
             return itemsAddedAmount;
 
         }
-    }
-}
+        private int AddToFirstAvailableSlots(string itemId, int amount, out int remainingAmount)
+        {
+            var itemsAddedAmount = 0;
+            remainingAmount = amount;
+            for (var i = 0; i < Size.x; i++)
+            {
+                for (var j = 0; j < Size.y; j++)
+                {
+                    var coords = new Vector2Int(i, j);
+                    var slot = _slotsMap[coords];
+                    if (!slot.IsEmpty)
+                    {
+                        continue;
+                    }
+                    slot.ItemId = itemId;
+                    var slotItemCapacity = GetItemSlotCapacity(slot.ItemId);
+                    var newValue = remainingAmount;
+                    if (newValue > slotItemCapacity)
+                    {
+                        remainingAmount = newValue - slotItemCapacity;
+                        itemsAddedAmount += slotItemCapacity;
+                        slot.ItemId = itemId;
+                        slot.Amount = slotItemCapacity;
+                        if (remainingAmount == 0)
+                        {
+                            return itemsAddedAmount;
+                        }
+                    }
+                    else
+                    {
+                        itemsAddedAmount += remainingAmount;
+                        slot.ItemId = itemId;
+                        slot.Amount = newValue;
+                        remainingAmount = 0;
+                    }
+                }
+            }
+            return itemsAddedAmount;
+        }
+
+    }    }   
