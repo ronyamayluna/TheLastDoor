@@ -18,7 +18,7 @@ public class Cabinet : MonoBehaviour
         {
             transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, CabinetOpenPositionZ);
         }
-        else
+        else if (!isOpen)
         {
             transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y, CabinetClosePositionZ);
         }
@@ -30,4 +30,5 @@ public class Cabinet : MonoBehaviour
         cabinetAudioSource.clip = isOpen ? cabinetOpenSound : cabinetCloseSound;
         cabinetAudioSource.Play();
     }
+    
 }

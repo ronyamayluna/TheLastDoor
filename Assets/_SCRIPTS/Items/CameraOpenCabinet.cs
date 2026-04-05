@@ -28,7 +28,6 @@ public class CameraOpenCabinet : MonoBehaviour
         if (Physics.Raycast(transform.position, transform.forward, out hit, openCabinetDistance))
         {
             Cabinet cabinet = hit.transform.GetComponent<Cabinet>();
-
             if (cabinet != null)
             {
                 cabinet.OpenCabinet();
