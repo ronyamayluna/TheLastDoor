@@ -3303,8 +3303,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.89550006, y: 0.5051472, z: 0.3037898}
-  m_Center: {x: -5.151301e-10, y: -0.004321226, z: 0.0026449228}
+  m_Size: {x: 0.008955001, y: 0.0052400874, z: 0.0029850006}
+  m_Center: {x: 2.3283067e-10, y: -0.0001375104, z: -7.566996e-10}
 --- !u!114 &496359589
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4193,8 +4193,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.1000001, y: 0.55, z: 0.9638666}
-  m_Center: {x: -8.0987636e-22, y: 1.6984339e-14, z: 0.4780665}
+  m_Size: {x: 0.011000001, y: 0.005500002, z: 0.00963867}
+  m_Center: {x: 0, y: 0.000000007450581, z: 0.004780666}
 --- !u!65 &636630579
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -4214,8 +4214,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8955002, y: 0.49882865, z: 0.17909995}
-  m_Center: {x: -1.3850186e-10, y: -0.0011618382, z: -0.000000104357724}
+  m_Size: {x: 0.008955001, y: 0.0052484036, z: 0.0017910002}
+  m_Center: {x: 0, y: -0.00014166864, z: -0.0000000013969839}
 --- !u!114 &636630580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4250,8 +4250,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 0.8955002, y: 0.49594888, z: 0.17909995}
-  m_Center: {x: 3.314126e-11, y: 0.0002780091, z: -0.00000006150151}
+  m_Size: {x: 0.008955001, y: 0.0052484036, z: 0.0017910002}
+  m_Center: {x: 0, y: -0.00014166864, z: -0.0000000011059456}
 --- !u!114 &636630582
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11601,6 +11601,11 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1157908777896943659, guid: 35b470aa627bc0e40a2112b87bef3910,
+        type: 3}
+      propertyPath: hand
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 2867866481885375454, guid: 35b470aa627bc0e40a2112b87bef3910,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -11657,7 +11662,8 @@ PrefabInstance:
       value: Player
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 147265670564027056, guid: 35b470aa627bc0e40a2112b87bef3910, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 7319103624237532507, guid: 35b470aa627bc0e40a2112b87bef3910,
@@ -12188,8 +12194,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.99999994, y: 1.0000001, z: 1.0000001}
+  m_Center: {x: 0, y: -0.000000014901161, z: 0}
 --- !u!23 &1947131620
 MeshRenderer:
   m_ObjectHideFlags: 0
