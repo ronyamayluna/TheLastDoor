@@ -4,10 +4,13 @@ public class PickableObjects : MonoBehaviour
 {
     private bool isPickedUp = false;
 
-    public void PickUpObject()
+    // Теперь метод принимает инвентарь, чтобы добавиться в него
+    public void PickUpObject(InventoryInv inventory)
     {
         if (isPickedUp) return;
         isPickedUp = true;
-        Destroy(this.gameObject);
+
+        inventory.AddItem(this.gameObject);
+        // Destroy удален, так как предмет теперь "живет" в инвентаре
     }
 }
