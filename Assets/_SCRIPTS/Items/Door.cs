@@ -10,8 +10,8 @@ namespace DoorScript
 	{
 		private bool open;
 		private float smooth = 1.0f;
-		float DoorOpenAngle = -90.0f;
-		float DoorCloseAngle = 0.0f;
+		private float DoorOpenAngle = -90.0f;
+		private float DoorCloseAngle = 0.0f;
 		public AudioSource asource;
 		public AudioClip openDoor, closeDoor;
 		// Use this for initialization
