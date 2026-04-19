@@ -1,0 +1,533 @@
+fileFormatVersion: 2
+guid: fcf407592469f4cb9ab33c890fdff3e1
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 244466525763220195
+    second: flashlightIcon_0
+  - first:
+      213: -8371615843539741329
+    second: flashlightIcon_1
+  - first:
+      213: 765059934666917360
+    second: flashlightIcon_2
+  - first:
+      213: 5178450161414970621
+    second: flashlightIcon_3
+  - first:
+      213: 8167781908982938610
+    second: flashlightIcon_4
+  - first:
+      213: 3132679234920211190
+    second: flashlightIcon_5
+  - first:
+      213: -4994789447320361320
+    second: flashlightIcon_6
+  - first:
+      213: 7129411250182194140
+    second: flashlightIcon_7
+  - first:
+      213: 1266951250178629066
+    second: flashlightIcon_8
+  - first:
+      213: -3097610058868560842
+    second: flashlightIcon_9
+  - first:
+      213: -2844427273035418842
+    second: flashlightIcon_10
+  - first:
+      213: 7422800399444933335
+    second: flashlightIcon_11
+  - first:
+      213: 5894285026793901697
+    second: flashlightIcon_12
+  - first:
+      213: -4048808356519170356
+    second: flashlightIcon_13
+  - first:
+      213: -5479252901427989372
+    second: flashlightIcon_14
+  - first:
+      213: -1548831842907785897
+    second: flashlightIcon_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: flashlightIcon_0
+      rect:
+        serializedVersion: 2
+        x: 405
+        y: 585
+        width: 3193
+        height: 3017
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3e2379b8205846300800000000000000
+      internalID: 244466525763220195
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flashlightIcon_1
+      rect:
+        serializedVersion: 2
+        x: 1161
+        y: 3600
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6518c9bebb02db80800000000000000
+      internalID: -8371615843539741329
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flashlightIcon_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 2800
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0f584b505f90e9a00800000000000000
+      internalID: 765059934666917360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flashlightIcon_3
+      rect:
+        serializedVersion: 2
+        x: 3624
+        y: 714
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dfc14363cfc8dd740800000000000000
+      internalID: 5178450161414970621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flashlightIcon_4
+      rect:
+        serializedVersion: 2
+        x: 3598
+        y: 678
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2fb3ac71f5ac95170800000000000000
+      internalID: 8167781908982938610
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flashlightIcon_5
+      rect:
+        serializedVersion: 2
+        x: 3225
+        y: 584
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f269a0aa23897b20800000000000000
+      internalID: 3132679234920211190
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flashlightIcon_6
+      rect:
+        serializedVersion: 2
+        x: 3236
+        y: 584
+        width: 6
+        height: 8
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 896a9901671feaab0800000000000000
+      internalID: -4994789447320361320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flashlightIcon_7
+      rect:
+        serializedVersion: 2
+        x: 3238
+        y: 578
+        width: 10
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd388c042c1c0f260800000000000000
+      internalID: 7129411250182194140
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flashlightIcon_8
+      rect:
+        serializedVersion: 2
+        x: 3478
+        y: 580
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: acd52ae037d159110800000000000000
+      internalID: 1266951250178629066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flashlightIcon_9
+      rect:
+        serializedVersion: 2
+        x: 3498
+        y: 580
+        width: 20
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63c667430141305d0800000000000000
+      internalID: -3097610058868560842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flashlightIcon_10
+      rect:
+        serializedVersion: 2
+        x: 3454
+        y: 566
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6237a4137709688d0800000000000000
+      internalID: -2844427273035418842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flashlightIcon_11
+      rect:
+        serializedVersion: 2
+        x: 3488
+        y: 570
+        width: 12
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dafa87b2a5130760800000000000000
+      internalID: 7422800399444933335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flashlightIcon_12
+      rect:
+        serializedVersion: 2
+        x: 3374
+        y: 542
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 18e44faa005bcc150800000000000000
+      internalID: 5894285026793901697
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flashlightIcon_13
+      rect:
+        serializedVersion: 2
+        x: 3420
+        y: 542
+        width: 8
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cceaa02504ebfc7c0800000000000000
+      internalID: -4048808356519170356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flashlightIcon_14
+      rect:
+        serializedVersion: 2
+        x: 3446
+        y: 548
+        width: 14
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4843bd73488c5f3b0800000000000000
+      internalID: -5479252901427989372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flashlightIcon_15
+      rect:
+        serializedVersion: 2
+        x: 3443
+        y: 536
+        width: 11
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 755faaa15a1718ae0800000000000000
+      internalID: -1548831842907785897
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      flashlightIcon_0: 244466525763220195
+      flashlightIcon_1: -8371615843539741329
+      flashlightIcon_10: -2844427273035418842
+      flashlightIcon_11: 7422800399444933335
+      flashlightIcon_12: 5894285026793901697
+      flashlightIcon_13: -4048808356519170356
+      flashlightIcon_14: -5479252901427989372
+      flashlightIcon_15: -1548831842907785897
+      flashlightIcon_2: 765059934666917360
+      flashlightIcon_3: 5178450161414970621
+      flashlightIcon_4: 8167781908982938610
+      flashlightIcon_5: 3132679234920211190
+      flashlightIcon_6: -4994789447320361320
+      flashlightIcon_7: 7129411250182194140
+      flashlightIcon_8: 1266951250178629066
+      flashlightIcon_9: -3097610058868560842
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

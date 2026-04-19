@@ -1,0 +1,1027 @@
+fileFormatVersion: 2
+guid: f107d049321a84d26ab77d551db109de
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -2432700019943049249
+    second: C_Letras_Height_0
+  - first:
+      213: -5052167114029750345
+    second: C_Letras_Height_1
+  - first:
+      213: -7126878885956287714
+    second: C_Letras_Height_2
+  - first:
+      213: -4305888802073278443
+    second: C_Letras_Height_3
+  - first:
+      213: 5476974275323292750
+    second: C_Letras_Height_4
+  - first:
+      213: -952136010184951894
+    second: C_Letras_Height_5
+  - first:
+      213: 3075087640263525490
+    second: C_Letras_Height_6
+  - first:
+      213: 2230873526473988225
+    second: C_Letras_Height_7
+  - first:
+      213: 2451766317359104594
+    second: C_Letras_Height_8
+  - first:
+      213: -6369955944051672874
+    second: C_Letras_Height_9
+  - first:
+      213: 3892259512831343651
+    second: C_Letras_Height_10
+  - first:
+      213: -2229551740593552917
+    second: C_Letras_Height_11
+  - first:
+      213: -4137743062915250263
+    second: C_Letras_Height_12
+  - first:
+      213: 4141165679974352388
+    second: C_Letras_Height_13
+  - first:
+      213: 5194679169243194892
+    second: C_Letras_Height_14
+  - first:
+      213: -3624293343390524496
+    second: C_Letras_Height_15
+  - first:
+      213: 3769755593840882168
+    second: C_Letras_Height_16
+  - first:
+      213: 7637933942215501830
+    second: C_Letras_Height_17
+  - first:
+      213: -4754512217598564962
+    second: C_Letras_Height_18
+  - first:
+      213: -5259772900190616462
+    second: C_Letras_Height_19
+  - first:
+      213: -6348670159882843700
+    second: C_Letras_Height_20
+  - first:
+      213: 5444383088360734525
+    second: C_Letras_Height_21
+  - first:
+      213: -3306224206164965420
+    second: C_Letras_Height_22
+  - first:
+      213: 5465368336153280321
+    second: C_Letras_Height_23
+  - first:
+      213: 8401102375638552654
+    second: C_Letras_Height_24
+  - first:
+      213: 3120083544105607766
+    second: C_Letras_Height_25
+  - first:
+      213: 3806601429962012421
+    second: C_Letras_Height_26
+  - first:
+      213: 2602331462141188446
+    second: C_Letras_Height_27
+  - first:
+      213: 1602347604382182016
+    second: C_Letras_Height_28
+  - first:
+      213: 8162288591025024558
+    second: C_Letras_Height_29
+  - first:
+      213: 2948223040176241047
+    second: C_Letras_Height_30
+  - first:
+      213: 1122283888693853580
+    second: C_Letras_Height_31
+  - first:
+      213: -4795117160080169523
+    second: C_Letras_Height_32
+  - first:
+      213: 1812669966381547612
+    second: C_Letras_Height_33
+  - first:
+      213: 4403389196418640113
+    second: C_Letras_Height_34
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: C_Letras_Height_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 450
+        width: 122
+        height: 574
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd7753a88305d3ed0800000000000000
+      internalID: -2432700019943049249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_1
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 526
+        width: 26
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b7a85ef6c813e9b0800000000000000
+      internalID: -5052167114029750345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_2
+      rect:
+        serializedVersion: 2
+        x: 170
+        y: 526
+        width: 26
+        height: 26
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e13085db96d381d90800000000000000
+      internalID: -7126878885956287714
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_3
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 527
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5180716b2f86e34c0800000000000000
+      internalID: -4305888802073278443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_4
+      rect:
+        serializedVersion: 2
+        x: 242
+        y: 527
+        width: 28
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4ce89cc51f120c40800000000000000
+      internalID: 5476974275323292750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_5
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 527
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa77117e75559c2f0800000000000000
+      internalID: -952136010184951894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_6
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 533
+        width: 26
+        height: 15
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2740a139ae7ecaa20800000000000000
+      internalID: 3075087640263525490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_7
+      rect:
+        serializedVersion: 2
+        x: 353
+        y: 529
+        width: 27
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1881e4417a7a5fe10800000000000000
+      internalID: 2230873526473988225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_8
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 526
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2520572c97c660220800000000000000
+      internalID: 2451766317359104594
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_9
+      rect:
+        serializedVersion: 2
+        x: 427
+        y: 527
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d879ef71de5997a0800000000000000
+      internalID: -6369955944051672874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_10
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 540
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32c72f3a765140630800000000000000
+      internalID: 3892259512831343651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_11
+      rect:
+        serializedVersion: 2
+        x: 465
+        y: 517
+        width: 26
+        height: 24
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be1419d218a0f01e0800000000000000
+      internalID: -2229551740593552917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_12
+      rect:
+        serializedVersion: 2
+        x: 502
+        y: 524
+        width: 27
+        height: 35
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a789136b98c396c0800000000000000
+      internalID: -4137743062915250263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_13
+      rect:
+        serializedVersion: 2
+        x: 539
+        y: 527
+        width: 26
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 40609eebe30687930800000000000000
+      internalID: 4141165679974352388
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_14
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 535
+        width: 8
+        height: 13
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c06acdc8e25371840800000000000000
+      internalID: 5194679169243194892
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_15
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 527
+        width: 24
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0bb1561186ce3bdc0800000000000000
+      internalID: -3624293343390524496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_16
+      rect:
+        serializedVersion: 2
+        x: 613
+        y: 527
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8f17de45dbcd05430800000000000000
+      internalID: 3769755593840882168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_17
+      rect:
+        serializedVersion: 2
+        x: 650
+        y: 529
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60867a3f3746ff960800000000000000
+      internalID: 7637933942215501830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_18
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 525
+        width: 29
+        height: 30
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e9568cd1454940eb0800000000000000
+      internalID: -4754512217598564962
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_19
+      rect:
+        serializedVersion: 2
+        x: 725
+        y: 527
+        width: 27
+        height: 28
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27489ec2a688107b0800000000000000
+      internalID: -5259772900190616462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_20
+      rect:
+        serializedVersion: 2
+        x: 761
+        y: 530
+        width: 27
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cc98f04502ef4e7a0800000000000000
+      internalID: -6348670159882843700
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_21
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 527
+        width: 26
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3fb2e2c2955e8b40800000000000000
+      internalID: 5444383088360734525
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_22
+      rect:
+        serializedVersion: 2
+        x: 828
+        y: 458
+        width: 196
+        height: 566
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4d74db30a9eed12d0800000000000000
+      internalID: -3306224206164965420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_23
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 368
+        width: 20
+        height: 25
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 14f75138b83e8db40800000000000000
+      internalID: 5465368336153280321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_24
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 386
+        width: 25
+        height: 70
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4050a58916b69470800000000000000
+      internalID: 8401102375638552654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_25
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 652e4f3d373cc4b20800000000000000
+      internalID: 3120083544105607766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_26
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 0
+        width: 6
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 507316215d3c3d430800000000000000
+      internalID: 3806601429962012421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_27
+      rect:
+        serializedVersion: 2
+        x: 38
+        y: 0
+        width: 6
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e599fb45da65d1420800000000000000
+      internalID: 2602331462141188446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_28
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 0
+        width: 7
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08ae5e518aeac3610800000000000000
+      internalID: 1602347604382182016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_29
+      rect:
+        serializedVersion: 2
+        x: 49
+        y: 0
+        width: 34
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2e25465a36464170800000000000000
+      internalID: 8162288591025024558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_30
+      rect:
+        serializedVersion: 2
+        x: 860
+        y: 0
+        width: 53
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 799b3541c313ae820800000000000000
+      internalID: 2948223040176241047
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_31
+      rect:
+        serializedVersion: 2
+        x: 981
+        y: 0
+        width: 8
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8dbdba2047239f00800000000000000
+      internalID: 1122283888693853580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_32
+      rect:
+        serializedVersion: 2
+        x: 988
+        y: 0
+        width: 9
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dc5aa093952547db0800000000000000
+      internalID: -4795117160080169523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_33
+      rect:
+        serializedVersion: 2
+        x: 996
+        y: 0
+        width: 7
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5001310bb5e72910800000000000000
+      internalID: 1812669966381547612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: C_Letras_Height_34
+      rect:
+        serializedVersion: 2
+        x: 1002
+        y: 0
+        width: 16
+        height: 380
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1f8635cd42bfb1d30800000000000000
+      internalID: 4403389196418640113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      C_Letras_Height_0: -2432700019943049249
+      C_Letras_Height_1: -5052167114029750345
+      C_Letras_Height_10: 3892259512831343651
+      C_Letras_Height_11: -2229551740593552917
+      C_Letras_Height_12: -4137743062915250263
+      C_Letras_Height_13: 4141165679974352388
+      C_Letras_Height_14: 5194679169243194892
+      C_Letras_Height_15: -3624293343390524496
+      C_Letras_Height_16: 3769755593840882168
+      C_Letras_Height_17: 7637933942215501830
+      C_Letras_Height_18: -4754512217598564962
+      C_Letras_Height_19: -5259772900190616462
+      C_Letras_Height_2: -7126878885956287714
+      C_Letras_Height_20: -6348670159882843700
+      C_Letras_Height_21: 5444383088360734525
+      C_Letras_Height_22: -3306224206164965420
+      C_Letras_Height_23: 5465368336153280321
+      C_Letras_Height_24: 8401102375638552654
+      C_Letras_Height_25: 3120083544105607766
+      C_Letras_Height_26: 3806601429962012421
+      C_Letras_Height_27: 2602331462141188446
+      C_Letras_Height_28: 1602347604382182016
+      C_Letras_Height_29: 8162288591025024558
+      C_Letras_Height_3: -4305888802073278443
+      C_Letras_Height_30: 2948223040176241047
+      C_Letras_Height_31: 1122283888693853580
+      C_Letras_Height_32: -4795117160080169523
+      C_Letras_Height_33: 1812669966381547612
+      C_Letras_Height_34: 4403389196418640113
+      C_Letras_Height_4: 5476974275323292750
+      C_Letras_Height_5: -952136010184951894
+      C_Letras_Height_6: 3075087640263525490
+      C_Letras_Height_7: 2230873526473988225
+      C_Letras_Height_8: 2451766317359104594
+      C_Letras_Height_9: -6369955944051672874
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

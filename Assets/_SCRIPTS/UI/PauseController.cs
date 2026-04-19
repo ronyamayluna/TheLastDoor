@@ -9,14 +9,14 @@ public class PauseController : MonoBehaviour
 
     private void OnEnable()
     {
-        // Подписываемся на события EventBus при включении объекта
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ EventBus пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ
         if (EventBus.Instance != null)
         {
             EventBus.Instance.OnGamePaused += ShowPausePanel;
             EventBus.Instance.OnGameResumed += HidePausePanel;
         }
         if (InputManager.Instance != null)
-            {
+        {
             InputManager.Instance.OnPausePressed += HandlePausePressed;
             InputManager.Instance.OnCancelPressed += HandleCancelPressed;
         }
@@ -24,7 +24,7 @@ public class PauseController : MonoBehaviour
 
     private void OnDisable()
     {
-        // Отписываемся от событий при выключении объекта (ВАЖНО для предотвращения утечек памяти!)
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ (пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ!)
         if (EventBus.Instance != null)
         {
             EventBus.Instance.OnGamePaused -= ShowPausePanel;
@@ -41,7 +41,7 @@ public class PauseController : MonoBehaviour
     {
         if (GameManager.Instance != null && GameManager.Instance.CurrentState == GameState.Playing)
         {
-            GameManager.Instance.Pause(); // вызовет EventBus, который покажет панель
+            GameManager.Instance.Pause(); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ EventBus, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         }
     }
 
@@ -49,22 +49,22 @@ public class PauseController : MonoBehaviour
     {
         if (GameManager.Instance != null && GameManager.Instance.CurrentState == GameState.Paused)
         {
-            GameManager.Instance.Resume(); // вызовет EventBus, который скроет панель
+            GameManager.Instance.Resume(); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ EventBus, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
         }
     }
 
     private void Start()
     {
-        // Подключаем кнопки (Start вызывается после всех Awake, поэтому менеджеры уже созданы)
+        // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ (Start пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ Awake, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ)
         if (buttonResume != null)
             buttonResume.onClick.AddListener(OnResumeClicked);
         if (buttonMainMenu != null)
             buttonMainMenu.onClick.AddListener(OnMainMenuClicked);
     }
 
-   
 
-    // Эти методы вызываются автоматически через EventBus
+
+    // пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ EventBus
     private void ShowPausePanel()
     {
         if (pausePanel != null)
@@ -77,11 +77,11 @@ public class PauseController : MonoBehaviour
             pausePanel.SetActive(false);
     }
 
-    // Обработчики кнопок
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     private void OnResumeClicked()
     {
         if (GameManager.Instance != null)
-            GameManager.Instance.Resume(); // вызовет EventBus, который скроет панель
+            GameManager.Instance.Resume(); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ EventBus, пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ
     }
 
     private void OnMainMenuClicked()

@@ -1,53 +1,124 @@
 using UnityEngine;
-using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class InventoryInv : MonoBehaviour
 {
-    public List<GameObject> slots = new List<GameObject>();
-    public Transform hand; 
-    private int currentIndex = -1;
+    [Header("Slots UI")]
+    [SerializeField] private Image[] slots;
+    [SerializeField] private Sprite emptySprite;
 
-    void Update()
+    [Header("Selection")]
+    [SerializeField] private Color selectedColor = Color.yellow;
+    [SerializeField] private Color normalColor = Color.white;
+
+    private string[] items; // ВАЖНО: фиксированные слоты
+    private int selectedIndex = 0;
+
+    [System.Serializable]
+    public class ItemData
     {
-        // Проверка нажатия цифр 1-9
-        for (int i = 0; i < 9; i++)
+        public string id;
+        public Sprite icon;
+    }
+
+    [SerializeField] private ItemData[] itemDatabase;
+
+    private void Start()
+    {
+        items = new string[slots.Length]; // фиксируем размер
+        UpdateUI();
+    }
+
+    private void Update()
+    {
+        HandleInput();
+    }
+
+    private void HandleInput()
+    {
+        for (int i = 0; i < slots.Length; i++)
         {
             if (Input.GetKeyDown(KeyCode.Alpha1 + i))
             {
-                SelectItem(i);
+                selectedIndex = i;
+                UpdateUI();
             }
         }
     }
 
-    public void AddItem(GameObject item)
+    // 🔥 ДОБАВЛЕНИЕ В ПЕРВЫЙ СВОБОДНЫЙ СЛОТ
+    public bool AddItem(string itemID)
     {
-        slots.Add(item);
-        item.SetActive(false); // Скрываем после подбора
-
-        // Устанавливаем предмет в "руку", но оставляем выключенным
-        if (hand != null)
+        for (int i = 0; i < items.Length; i++)
         {
-            item.transform.SetParent(hand);
-            item.transform.localPosition = Vector3.zero;
-            item.transform.localRotation = Quaternion.identity;
+            if (string.IsNullOrEmpty(items[i]))
+            {
+                items[i] = itemID;
+                UpdateUI();
+                return true;
+            }
         }
 
-        // Если это первый предмет, выбираем его сразу
-        if (slots.Count == 1) SelectItem(0);
+        Debug.Log("Инвентарь полон!");
+        return false;
     }
 
-    void SelectItem(int index)
+    public void RemoveItem(string itemID)
     {
-        if (index >= slots.Count) return;
+        for (int i = 0; i < items.Length; i++)
+        {
+            if (items[i] == itemID)
+            {
+                items[i] = null;
+                UpdateUI();
+                return;
+            }
+        }
+    }
 
-        // Выключаем текущий предмет
-        if (currentIndex != -1 && currentIndex < slots.Count)
-            slots[currentIndex].SetActive(false);
+    public string GetSelectedItem()
+    {
+        if (selectedIndex >= 0 && selectedIndex < items.Length)
+            return items[selectedIndex];
 
-        currentIndex = index;
+        return null;
+    }
 
-        // Включаем новый выбранный предмет
-        slots[currentIndex].SetActive(true);
-        Debug.Log("Выбран предмет: " + slots[currentIndex].name);
+    public bool HasItem(string itemID)
+    {
+        foreach (var item in items)
+        {
+            if (item == itemID)
+                return true;
+        }
+        return false;
+    }
+
+    private void UpdateUI()
+    {
+        for (int i = 0; i < slots.Length; i++)
+        {
+            if (!string.IsNullOrEmpty(items[i]))
+            {
+                slots[i].sprite = GetIcon(items[i]);
+                slots[i].enabled = true;
+            }
+            else
+            {
+                slots[i].sprite = emptySprite;
+            }
+
+            slots[i].color = (i == selectedIndex) ? selectedColor : normalColor;
+        }
+    }
+
+    private Sprite GetIcon(string id)
+    {
+        foreach (var item in itemDatabase)
+        {
+            if (item.id == id)
+                return item.icon;
+        }
+        return null;
     }
 }
