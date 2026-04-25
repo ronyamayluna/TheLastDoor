@@ -1,23 +1,32 @@
-
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
-public class FillAreaCanvasLoading : MonoBehaviour
+public class LoadingScreen : MonoBehaviour
 {
-    [SerializeField] private RectTransform rectTransform;
+    public Slider loadingSlider;
+    public float duration = 3f;
 
-    public void Start()
+    void Start()
     {
-        ChangeEdgeRight(0, 837);
+        StartCoroutine(AnimateLoadingBar());
     }
 
-    public void ChangeEdgeRight(float inset, float size)
+    IEnumerator AnimateLoadingBar()
     {
-        if (rectTransform != null)
+        float elapsedTime = 0f;
+        loadingSlider.value = 0f;
+
+        while (elapsedTime < duration)
         {
-            // Устанавливаем отступ и размер относительно левой стороны
-            rectTransform.SetInsetAndSizeFromParentEdge(RectTransform.Edge.Right, 837, size);
+            elapsedTime += Time.deltaTime;
+
+            loadingSlider.value = Mathf.Clamp01(elapsedTime / duration);
+
+            yield return null;
         }
-        
+
+        loadingSlider.value = 1f;
+
     }
 }

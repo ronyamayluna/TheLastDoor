@@ -11,7 +11,7 @@ public class InventoryInv : MonoBehaviour
     [SerializeField] private Color selectedColor = Color.yellow;
     [SerializeField] private Color normalColor = Color.white;
 
-    private string[] items; // ВАЖНО: фиксированные слоты
+    private string[] items; //фиксированные слоты
     private int selectedIndex = 0;
 
     [System.Serializable]
@@ -45,8 +45,6 @@ public class InventoryInv : MonoBehaviour
             }
         }
     }
-
-    // 🔥 ДОБАВЛЕНИЕ В ПЕРВЫЙ СВОБОДНЫЙ СЛОТ
     public bool AddItem(string itemID)
     {
         for (int i = 0; i < items.Length; i++)
