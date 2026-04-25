@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using System.Collections;
 
 public class BootstrapManager : MonoBehaviour
 {
@@ -22,9 +23,18 @@ public class BootstrapManager : MonoBehaviour
         CreateSceneLoader();
         CreateEventBus();
         CreateInputManager();
+    }
+    private void Start()
+    {
+        // Стартовый flow урока: Bootstrap -> Loading -> MainMenu.
+        SceneLoader.Instance.LoadWithLoading(SceneNames.MainMenu, PreloadBeforeMainMenu);
+    }
 
-        // Переходим в главное меню
-        SceneLoader.Instance.Load(SceneNames.MainMenu);
+    private IEnumerator PreloadBeforeMainMenu()
+    {
+        // Простая точка расширения: сюда добавляем обязательную подгрузку
+        // (настройки, сохранения, локализация и т.п.) по мере роста проекта.
+        yield return null;
     }
 
     private static void CreateGameManager()
