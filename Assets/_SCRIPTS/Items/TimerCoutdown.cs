@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class timescript : MonoBehaviour
+public class TimeScript : MonoBehaviour
 {
-    [SerializeField] TextMeshProUGUI timerText;
+    [SerializeField] TextMeshProUGUI[] timerText;
     [SerializeField] float remainingTime;
-
+    
+    public System.Action OnTimerEnd;
 
     void Update()
     {
@@ -18,10 +19,17 @@ public class timescript : MonoBehaviour
         else
         {
             remainingTime = 0;
-            // GameOver();
         }
+
         int minutes = Mathf.FloorToInt(remainingTime / 60);
         int seconds = Mathf.FloorToInt(remainingTime % 60);
-        timerText.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+
+        foreach (var text in timerText)
+        {
+            if (text != null)
+            {
+                text.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+            }
+        }
     }
 }
