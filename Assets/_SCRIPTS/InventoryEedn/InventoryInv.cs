@@ -57,7 +57,6 @@ public class InventoryInv : MonoBehaviour
             }
         }
 
-        Debug.Log("Инвентарь полон!");
         return false;
     }
 
