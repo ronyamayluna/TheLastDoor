@@ -5,9 +5,14 @@ public class EventBus : MonoBehaviour
 {
     public static EventBus Instance { get; private set; }
 
-    // События - можно подписаться из любого места
+    // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ - пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
     public event Action OnGamePaused;
     public event Action OnGameResumed;
+
+    // Р’ EventBus.cs РґРѕР±Р°РІСЊ:
+    public event Action OnGameOver;
+
+
 
     private void Awake()
     {
@@ -21,14 +26,19 @@ public class EventBus : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    // Методы для вызова событий (raise/trigger)
+    // пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ (raise/trigger)
     public void RaiseGamePaused()
     {
-        OnGamePaused?.Invoke(); // вызываем событие, если есть подписчики
+        OnGamePaused?.Invoke(); // пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
     }
 
     public void RaiseGameResumed()
     {
         OnGameResumed?.Invoke();
+    }
+
+    public void RaiseGameOver()
+    {
+        OnGameOver?.Invoke();
     }
 }

@@ -8,6 +8,9 @@ public class CursorControllerc : MonoBehaviour
         {
             EventBus.Instance.OnGamePaused += HandlePaused;
             EventBus.Instance.OnGameResumed += HandleResumed;
+
+            // Подписываемся на новое событие конца игры
+            EventBus.Instance.OnGameOver += HandlePaused; // Используем тот же метод показа курсора
         }
     }
 
@@ -17,6 +20,7 @@ public class CursorControllerc : MonoBehaviour
         {
             EventBus.Instance.OnGamePaused -= HandlePaused;
             EventBus.Instance.OnGameResumed -= HandleResumed;
+            EventBus.Instance.OnGameOver -= HandlePaused;
         }
     }
 
@@ -32,6 +36,11 @@ public class CursorControllerc : MonoBehaviour
 
     private void HandleResumed()
     {
+        // Если игра уже проиграна или выиграна, 
+        // курсор не должен прятаться обратно при случайных вызовах Resume
+        if (GameManager.Instance.CurrentState == GameState.Lost ||
+            GameManager.Instance.CurrentState == GameState.Won) return;
+
         SetGameCursor();
     }
 

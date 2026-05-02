@@ -2,11 +2,11 @@ using UnityEngine;
 
 public enum GameState
 {
-    MainMenu=0,
-    Playing=1,
-    Paused=2,
-    Lost=3,
-    Won=4,
+    MainMenu = 0,
+    Playing = 1,
+    Paused = 2,
+    Lost = 3,
+    Won = 4,
 }
 
 public class GameManager : MonoBehaviour
@@ -48,7 +48,7 @@ public class GameManager : MonoBehaviour
             return;
 
         CurrentState = GameState.Paused;
-        Time.timeScale = 0f; // простой вариант паузы
+        Time.timeScale = 0f; // пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ
         EventBus.Instance.RaiseGamePaused();
         Debug.Log("Game paused");
     }
@@ -65,8 +65,8 @@ public class GameManager : MonoBehaviour
     }
 
     /// <summary>
-    /// Перезапускает игровую сцену через Loading и переводит игру в состояние Playing.
-    /// Используется для "New Game" и "Restart" с lose-экрана.
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ Loading пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ пїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ Playing.
+    /// пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅ "New Game" пїЅ "Restart" пїЅ lose-пїЅпїЅпїЅпїЅпїЅпїЅ.
     /// </summary>
     public void RestartGameScene()
     {
@@ -78,33 +78,36 @@ public class GameManager : MonoBehaviour
             InputManager.Instance.EnablePlayerInput();
     }
 
-    /// <summary>
-    /// Переводит игру в состояние поражения и включает UI-ввод.
-    /// </summary>
+
+
     public void EnterLoseState()
     {
-        if (CurrentState != GameState.Playing)
-            return;
+        if (CurrentState != GameState.Playing) return;
 
         CurrentState = GameState.Lost;
         Time.timeScale = 0f;
+
+        EventBus.Instance.RaiseGameOver();
+
         if (InputManager.Instance != null)
             InputManager.Instance.EnableUIInput();
-        Debug.Log("Game lost");
+
     }
 
-    /// <summary>
-    /// Переводит игру в состояние победы и включает UI-ввод.
-    /// </summary>
     public void EnterWinState()
     {
-        if (CurrentState != GameState.Playing)
-            return;
+        if (CurrentState != GameState.Playing) return;
 
         CurrentState = GameState.Won;
         Time.timeScale = 0f;
+
+        // РћРїРѕРІРµС‰Р°РµРј РјРёСЂ, С‡С‚Рѕ РёРіСЂР° РѕРєРѕРЅС‡РµРЅР°
+        EventBus.Instance.RaiseGameOver();
+
         if (InputManager.Instance != null)
             InputManager.Instance.EnableUIInput();
-        Debug.Log("Game won");
+
     }
+
+
 }
