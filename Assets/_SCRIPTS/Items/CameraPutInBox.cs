@@ -2,30 +2,41 @@ using UnityEngine;
 
 public class CameraPutInBox : MonoBehaviour
 {
-    private float BoxDistance = 3f;
+    [SerializeField] private float boxDistance = 3f;
+
     private InventoryInv inventory;
+
+    private void Awake()
+    {
+        inventory = FindFirstObjectByType<InventoryInv>();
+    }
 
     private void OnEnable()
     {
         if (InputManager.Instance != null)
+        {
             InputManager.Instance.OnInteractPressed += CmPutInBox;
+        }
     }
 
     private void OnDisable()
     {
         if (InputManager.Instance != null)
+        {
             InputManager.Instance.OnInteractPressed -= CmPutInBox;
+        }
     }
 
     public void CmPutInBox()
     {
-        RaycastHit hit;
+        if (inventory == null) return;
 
-        if (Physics.Raycast(transform.position, transform.forward, out hit, BoxDistance))
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, transform.forward, out hit, boxDistance))
         {
             PutInBox putInBox = hit.transform.GetComponent<PutInBox>();
 
-            if (putInBox != null && inventory != null)
+            if (putInBox != null)
             {
                 putInBox.TryPut(inventory);
             }

@@ -2,37 +2,57 @@ using UnityEngine;
 
 public class PutInBox : MonoBehaviour
 {
+    [SerializeField] GameObject boxFObject;
+    [SerializeField] GameObject boxSObject;
+    [SerializeField] string requiredItemIDBox = "box2";
+
     [SerializeField] GameObject keyObject;
     [SerializeField] GameObject mirror;
-    [SerializeField] string requiredItemID = "mirror"; // ID предмета, который нужно положить в коробку
+    [SerializeField] string requiredItemID = "mirror";
+
+    private bool IsSwitched = false;
 
     public void TryPut(InventoryInv inventory)
     {
+        if (inventory == null) return;
 
-        if (string.IsNullOrEmpty(requiredItemID))
+        if (!IsSwitched)
         {
-            ShowKey();
+            if (inventory.HasItem(requiredItemIDBox))
+            {
+                inventory.RemoveItem(requiredItemIDBox);
+                ReplaceBox();
+            }
+            else
+            {
+                Debug.Log("РќСѓР¶РЅР° РєРѕСЂРѕР±РєР° РІ РёРЅРІРµРЅС‚Р°СЂРµ!");
+            }
             return;
         }
-
-        if (inventory.HasItem(requiredItemID))
+        if (IsSwitched)
         {
-            inventory.RemoveItem(requiredItemID);
-            ShowKey();
+            if (inventory.HasItem(requiredItemID))
+            {
+                inventory.RemoveItem(requiredItemID);
+                ShowKey();
+            }
+            else
+            {
+                Debug.Log("РќСѓР¶РЅРѕ Р·РµСЂРєР°Р»Рѕ!");
+            }
         }
-        
+    }
+
+    private void ReplaceBox()
+    {
+        if (boxFObject != null) boxFObject.SetActive(false);
+        if (boxSObject != null) boxSObject.SetActive(true);
+        IsSwitched = true;
     }
 
     private void ShowKey()
     {
-        if (keyObject != null)
-        {
-            keyObject.SetActive(true);
-        }
-        if (mirror != null)
-        {
-            mirror.SetActive(true);
-        }
+        if (keyObject != null) keyObject.SetActive(true);
+        if (mirror != null) mirror.SetActive(true);
     }
 }
-
