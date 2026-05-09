@@ -15,7 +15,6 @@ public class SimpleTeleport : MonoBehaviour
             TeleportPlayer(other.transform.root != null ? other.transform.root : other.transform);
         }
     }
-
     private void TeleportPlayer(Transform player)
     {
         if (timer != null) timer.StopTimer();
