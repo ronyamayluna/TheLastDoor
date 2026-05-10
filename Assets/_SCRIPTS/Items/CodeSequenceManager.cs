@@ -22,16 +22,6 @@ public class CodeSequenceManager : MonoBehaviour
         Instance = this;
     }
 
-    private void Start()
-    {
-        if (doorTransform != null)
-        {
-            closedRotation = doorTransform.localRotation;
-
-            openRotation = closedRotation * Quaternion.Euler(0, 90, 0);
-        }
-    }
-
     public void RegisterButton(int digit)
     {
         if (isOpened) return;
@@ -59,22 +49,21 @@ public class CodeSequenceManager : MonoBehaviour
         {
             Debug.Log("<color=green>Успех!</color> Открываю сейф...");
             isOpened = true;
-            StartCoroutine(OpenDoorRoutine());
         }
     }
 
-    private IEnumerator OpenDoorRoutine()
-    {
-        float elapsed = 0;
-        while (Quaternion.Angle(doorTransform.localRotation, openRotation) > 0.01f)
-        {
-            doorTransform.localRotation = Quaternion.Slerp(
-                doorTransform.localRotation,
-                openRotation,
-                Time.deltaTime * openSpeed
-            );
-            yield return null;
-        }
-        doorTransform.localRotation = openRotation;
-    }
+    //private IEnumerator OpenDoorRoutine()
+    //{
+    //    float elapsed = 0;
+    //    while (Quaternion.Angle(doorTransform.localRotation, openRotation) > 0.01f)
+    //    {
+    //        doorTransform.localRotation = Quaternion.Slerp(
+    //            doorTransform.localRotation,
+    //            openRotation,
+    //            Time.deltaTime * openSpeed
+    //        );
+    //        yield return null;
+    //    }
+    //    doorTransform.localRotation = openRotation;
+    //}
 }
