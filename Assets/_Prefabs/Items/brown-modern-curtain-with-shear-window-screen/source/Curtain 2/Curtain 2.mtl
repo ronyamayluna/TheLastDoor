@@ -1,0 +1,20 @@
+# MTL Exporter v1.0 by Seungwoo Oh at CLO - Virtual Fashion Inc.
+newmtl Shear_FRONT_4181
+Ka 0.257132 0.257132 0.257132
+Kd 1.000000 1.000000 1.000000
+Ks 0.075000 0.075000 0.075000
+Ns 28.763239
+illum 2
+d 0.500000
+map_Ka shear_Base Color.png
+map_Kd shear_Base Color.png
+newmtl Curtain_FRONT_8197
+Ka 0.257132 0.257132 0.257132
+Kd 1.000000 1.000000 1.000000
+Ks 0.075000 0.075000 0.075000
+Ns 28.763239
+illum 2
+d 1.000000
+map_Ka Outer curtain_Base Color.png
+map_Kd Outer curtain_Base Color.png
+map_Bump Outer curtain_Normal.png
