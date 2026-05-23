@@ -12,14 +12,25 @@ public class CodeSequenceManager : MonoBehaviour
     [SerializeField] private Transform doorTransform;
     [SerializeField] private float openSpeed = 2f;
 
-    private Quaternion closedRotation;
-    private Quaternion openRotation;
+    [SerializeField] private Transform wheelTransform;
+    [SerializeField] private float wheelRotateSpeed = 4f;
 
+    private Quaternion doorOpenRotation;
+    private Quaternion wheelTargetRotation;
     private bool isOpened = false;
 
     private void Awake()
     {
         Instance = this;
+    }
+
+    private void Start()
+    {
+        // Целевой поворот двери: 125 градусов по Y
+        doorOpenRotation = Quaternion.Euler(0, 125f, 0);
+
+        // Целевой поворот вентиля: 180 градусов по X
+        wheelTargetRotation = Quaternion.Euler(180f, 0, 0);
     }
 
     public void RegisterButton(int digit)
@@ -38,32 +49,54 @@ public class CodeSequenceManager : MonoBehaviour
         {
             if (currentInput[i] != correctCode[i])
             {
-                Debug.Log("<color=red>Ошибка!</color> Код сброшен.");
+                Debug.Log("Код сброшен.");
                 currentInput.Clear();
                 return;
             }
         }
 
-        // Если дошли сюда и длины совпали — код верный
         if (currentInput.Count == correctCode.Length)
         {
-            Debug.Log("<color=green>Успех!</color> Открываю сейф...");
+            Debug.Log("Код верный! Начинаю процесс открытия...");
             isOpened = true;
+
+            StartCoroutine(OpenSequenceRoutine());
         }
     }
 
-    //private IEnumerator OpenDoorRoutine()
-    //{
-    //    float elapsed = 0;
-    //    while (Quaternion.Angle(doorTransform.localRotation, openRotation) > 0.01f)
-    //    {
-    //        doorTransform.localRotation = Quaternion.Slerp(
-    //            doorTransform.localRotation,
-    //            openRotation,
-    //            Time.deltaTime * openSpeed
-    //        );
-    //        yield return null;
-    //    }
-    //    doorTransform.localRotation = openRotation;
-    //}
+    // Последовательная анимация: сначала вентиль, потом дверь
+    private IEnumerator OpenSequenceRoutine()
+    {
+        if (wheelTransform != null)
+        {
+            while (Quaternion.Angle(wheelTransform.localRotation, wheelTargetRotation) > 0.01f)
+            {
+                wheelTransform.localRotation = Quaternion.Slerp(
+                    wheelTransform.localRotation,
+                    wheelTargetRotation,
+                    Time.deltaTime * wheelRotateSpeed
+                );
+                yield return null;
+            }
+            wheelTransform.localRotation = wheelTargetRotation;
+        }
+
+        yield return new WaitForSeconds(0.2f);
+
+        if (doorTransform != null)
+        {
+            while (Quaternion.Angle(doorTransform.localRotation, doorOpenRotation) > 0.01f)
+            {
+                doorTransform.localRotation = Quaternion.Slerp(
+                    doorTransform.localRotation,
+                    doorOpenRotation,
+                    Time.deltaTime * openSpeed
+                );
+                yield return null;
+            }
+            doorTransform.localRotation = doorOpenRotation;
+        }
+    }
 }
+
+

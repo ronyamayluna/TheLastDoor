@@ -1,19 +1,23 @@
 using UnityEngine;
 
-public class PutInBox : MonoBehaviour
+public class PutInBox : MonoBehaviour, IInteractable
 {
-    [SerializeField] GameObject boxFObject;
-    [SerializeField] GameObject boxSObject;
-    [SerializeField] string requiredItemIDBox = "box2";
+    [SerializeField] private GameObject boxFObject;
+    [SerializeField] private GameObject boxSObject;
+    [SerializeField] private string requiredItemIDBox = "box2";
 
-    [SerializeField] GameObject keyObject;
-    [SerializeField] GameObject mirror;
-    [SerializeField] string requiredItemID = "mirror";
+    [SerializeField] private GameObject keyObject;
+    [SerializeField] private GameObject mirror;
+    [SerializeField] private string requiredItemID = "mirror";
 
     private bool IsSwitched = false;
 
-    public void TryPut(InventoryInv inventory)
+    // Реализация метода интерфейса взаимодействия
+    public void Interact(PlayerInteraction player)
     {
+        // Берем инвентарь у игрока, который на нас посмотрел
+        InventoryInv inventory = player.Inventory;
+
         if (inventory == null) return;
 
         if (!IsSwitched)
@@ -29,6 +33,7 @@ public class PutInBox : MonoBehaviour
             }
             return;
         }
+
         if (IsSwitched)
         {
             if (inventory.HasItem(requiredItemID))

@@ -1,7 +1,6 @@
 using UnityEngine;
 using System.Collections;
-
-public class ButtonThirdRoom : MonoBehaviour
+public class ButtonThirdRoom : MonoBehaviour, IInteractable
 {
     private bool isPressed = false;
 
@@ -19,6 +18,11 @@ public class ButtonThirdRoom : MonoBehaviour
     public int buttonID; // для последовательности
 
     private Coroutine pressRoutine;
+
+    public void Interact(PlayerInteraction player)
+    {
+        PressButton();
+    }
 
     private void Update()
     {
@@ -49,7 +53,10 @@ public class ButtonThirdRoom : MonoBehaviour
         }
 
         // уведомляем менеджер последовательности
-        ButtonSequenceManager.Instance.RegisterButton(buttonID);
+        if (ButtonSequenceManager.Instance != null)
+        {
+            ButtonSequenceManager.Instance.RegisterButton(buttonID);
+        }
     }
 
     private IEnumerator PressRoutine()

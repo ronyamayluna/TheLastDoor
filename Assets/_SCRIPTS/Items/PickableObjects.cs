@@ -1,18 +1,34 @@
 using UnityEngine;
 
-public class PickableObjects : MonoBehaviour
+// Подключаем наш интерфейс взаимодействия
+public class PickableObjects : MonoBehaviour, IInteractable
 {
-    [SerializeField] string itemID;
+    [SerializeField] private string itemID;
     private bool isPickedUp = false;
 
-    public void PickUpObject(InventoryInv inventory)
+    // Реализация метода интерфейса
+    public void Interact(PlayerInteraction player)
     {
         if (isPickedUp) return;
 
-        isPickedUp = true;
+        // Берем инвентарь у игрока, который на нас посмотрел
+        InventoryInv inventory = player.Inventory;
 
-        inventory.AddItem(itemID);
+        if (inventory != null)
+        {
+            // Пытаемся добавить предмет в инвентарь
+            bool success = inventory.AddItem(itemID);
 
-        Destroy(gameObject);
+            // Если в инвентаре было свободное место — подбираем
+            if (success)
+            {
+                isPickedUp = true;
+                Destroy(gameObject);
+            }
+            else
+            {
+                Debug.Log("Инвентарь забит! Не удается подобрать: " + itemID);
+            }
+        }
     }
 }

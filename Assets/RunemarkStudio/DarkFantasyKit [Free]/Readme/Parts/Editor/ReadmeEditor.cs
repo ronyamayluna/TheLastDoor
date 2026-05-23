@@ -30,14 +30,14 @@ namespace Runemark.DarkFantasyKit
 
                 if (readme && !readme.loadedLayout)
                 {
-                   // LoadLayout();
+                    // LoadLayout();
                     readme.loadedLayout = true;
                 }
             }
         }
 
         static void LoadLayout()
-        {           
+        {
             var assembly = typeof(EditorApplication).Assembly;
             var windowLayoutType = assembly.GetType("UnityEditor.WindowLayout", true);
             var method = windowLayoutType.GetMethod("LoadWindowLayout", BindingFlags.Public | BindingFlags.Static);
@@ -52,9 +52,22 @@ namespace Runemark.DarkFantasyKit
             {
                 var readmeObject = AssetDatabase.LoadMainAssetAtPath(AssetDatabase.GUIDToAssetPath(ids[0]));
 
-                Selection.objects = new UnityEngine.Object[] { readmeObject };
+                if (readmeObject == null)
+                {
+                    Debug.Log("Failed to load readme asset");
+                    return null;
+                }
 
-                return (Readme)readmeObject;
+                var readme = readmeObject as Readme;
+                if (readme == null)
+                {
+                    Debug.Log("Loaded asset is not a Readme object");
+                    return null;
+                }
+
+                Selection.objects = new UnityEngine.Object[] { readme };
+
+                return readme;
             }
             else
             {
@@ -80,7 +93,7 @@ namespace Runemark.DarkFantasyKit
 
         public override void OnInspectorGUI()
         {
-           // base.OnInspectorGUI();
+            // base.OnInspectorGUI();
 
             var readme = (Readme)target;
             Init();

@@ -49,21 +49,37 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float stepInterval = 0.5f;
 
     private float stepTimer;
-
     private Vector2 _move;
+
+    // Переменная контроля движения
+    private bool canMove = true;
 
     public void OnMove(InputValue val)
     {
+        if (!canMove) return; // Игнорируем ввод, если движение заблокировано
         _move = val.Get<Vector2>();
     }
 
     private void Update()
     {
-        Vector3 moveDir = (GetForward() * _move.y + GetRight() * _move.x);
+        if (!canMove) return; // Останавливаем выполнение Update, если ходить нельзя
 
+        Vector3 moveDir = (GetForward() * _move.y + GetRight() * _move.x);
         _characterController.Move(moveDir * Time.deltaTime * characterSpeed);
 
         HandleFootsteps(moveDir);
+    }
+
+    // МЕТОДЫ ДЛЯ БЛОКИРОВКИ УПРАВЛЕНИЯ
+    public void DisableMovement()
+    {
+        canMove = false;
+        _move = Vector2.zero; // Сбрасываем движение, чтобы игрок замер
+    }
+
+    public void EnableMovement()
+    {
+        canMove = true;
     }
 
     private void HandleFootsteps(Vector3 moveDir)
@@ -73,7 +89,6 @@ public class PlayerController : MonoBehaviour
         if (isMoving)
         {
             stepTimer += Time.deltaTime;
-
             if (stepTimer >= stepInterval)
             {
                 footstepSource.Play();

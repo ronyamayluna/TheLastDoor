@@ -1,8 +1,13 @@
 using UnityEngine;
 
-public class Code : MonoBehaviour
+public class Code : MonoBehaviour, IInteractable
 {
     [SerializeField] private int myDigit;
+
+    public void Interact(PlayerInteraction player)
+    {
+        PressButtonCode();
+    }
 
     public void PressButtonCode()
     {
@@ -12,3 +17,4 @@ public class Code : MonoBehaviour
         }
     }
 }
+

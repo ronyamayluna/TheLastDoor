@@ -1,7 +1,7 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
-public class Cabinet : MonoBehaviour
+// Наследуем интерфейс IInteractable
+public class Cabinet : MonoBehaviour, IInteractable
 {
     private bool isOpen = false;
 
@@ -14,6 +14,11 @@ public class Cabinet : MonoBehaviour
     [SerializeField] private AudioSource cabinetAudioSource;
     [SerializeField] private AudioClip cabinetOpenSound;
     [SerializeField] private AudioClip cabinetCloseSound;
+
+    public void Interact(PlayerInteraction player)
+    {
+        OpenCabinet();
+    }
 
     public void Update()
     {

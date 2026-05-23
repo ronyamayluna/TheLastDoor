@@ -706,10 +706,10 @@ PlayableDirector:
     value: {fileID: 865634193}
   - key: {fileID: -7287373461693835206, guid: c9abebcc733d74a4389721f76e056a5d, type: 2}
     value: {fileID: 2018465321}
-  - key: {fileID: 5029797850835368814, guid: c9abebcc733d74a4389721f76e056a5d, type: 2}
-    value: {fileID: 662314841}
   - key: {fileID: -7150571067934620213, guid: c9abebcc733d74a4389721f76e056a5d, type: 2}
     value: {fileID: 865634193}
+  - key: {fileID: -3357680883664819528, guid: c9abebcc733d74a4389721f76e056a5d, type: 2}
+    value: {fileID: 662314841}
   m_ExposedReferences:
     m_References:
     - e8027f52a98d24434b263583a3958039: {fileID: 2068715511}

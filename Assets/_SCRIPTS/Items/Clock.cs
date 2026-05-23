@@ -1,16 +1,39 @@
 using UnityEngine;
 
-public class Clock : MonoBehaviour
+public class Clock : MonoBehaviour, IInteractable
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [Header("Clock Settings")]
+    [SerializeField] private GameObject[] thingsToRotate = new GameObject[1];
+    [SerializeField] private float speed = -25f;
+
+    [Header("Reward")]
+    [SerializeField] private GameObject keyObject;
+
+    private bool isActivated = false;
+
+    public void Interact(PlayerInteraction player)
     {
-        
+        if (isActivated) return;
+
+        isActivated = true;
+        if (keyObject != null)
+        {
+            keyObject.SetActive(true);
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
+        if (isActivated)
+        {
+            foreach (GameObject arrow in thingsToRotate)
+            {
+                if (arrow != null)
+                {
+                    arrow.transform.Rotate(0, 0, speed * Time.deltaTime);
+                }
+            }
+        }
     }
 }
+
