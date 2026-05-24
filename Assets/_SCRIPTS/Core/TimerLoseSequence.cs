@@ -24,6 +24,8 @@ public class TimerLoseSequence : MonoBehaviour
     [SerializeField] private float shakeIntensity = 2.0f;
     [SerializeField] private float shakeFrequency = 2.0f;
 
+    [SerializeField] GameObject HUDCanvas; // Ссылка на канвас с HUD, который нужно отключить при проигрыше
+
     private CinemachineBasicMultiChannelPerlin _noise;
 
     private void Awake()
@@ -48,6 +50,8 @@ public class TimerLoseSequence : MonoBehaviour
     {
         if (GameManager.Instance.CurrentState != GameState.Playing)
             yield break;
+
+        if (HUDCanvas != null) HUDCanvas.SetActive(false); // Отключаем HUD при проигрыше
 
         if (_noise != null) { _noise.AmplitudeGain = shakeIntensity; _noise.FrequencyGain = shakeFrequency; }
         if (audioSource && alarmSound) { audioSource.clip = alarmSound; audioSource.loop = true; audioSource.Play(); }

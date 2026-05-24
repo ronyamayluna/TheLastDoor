@@ -5670,7 +5670,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &160979248
 RectTransform:
   m_ObjectHideFlags: 0
@@ -9530,7 +9530,7 @@ MonoBehaviour:
   - {fileID: 2060758750}
   - {fileID: 863881213}
   - {fileID: 1681166030}
-  remainingTime: 1500
+  remainingTime: 600
 --- !u!1001 &282586819
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -18487,6 +18487,7 @@ MonoBehaviour:
   finalLoseSound: {fileID: 8300000, guid: dc5c832abceaa403da24a4208a513c33, type: 3}
   shakeIntensity: 0.3
   shakeFrequency: 2
+  HUDCanvas: {fileID: 47014835}
 --- !u!1 &600132268
 GameObject:
   m_ObjectHideFlags: 0
@@ -23662,7 +23663,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &798436772
 RectTransform:
   m_ObjectHideFlags: 0
@@ -38440,8 +38441,8 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1253485437}
-  - {fileID: 47014839}
   - {fileID: 157821820}
+  - {fileID: 47014839}
   - {fileID: 99285194}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
