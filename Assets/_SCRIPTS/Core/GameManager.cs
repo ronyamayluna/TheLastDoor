@@ -108,6 +108,4 @@ public class GameManager : MonoBehaviour
             InputManager.Instance.EnableUIInput();
 
     }
-
-
 }

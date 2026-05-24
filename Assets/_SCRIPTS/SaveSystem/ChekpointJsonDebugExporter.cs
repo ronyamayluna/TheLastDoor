@@ -1,35 +1,16 @@
 using System;
 using System.IO;
 using UnityEngine;
-
-/// <summary>
-/// CheckpointJsonDebugExporter
-/// Что делает: пишет читаемую JSON-копию checkpoint-save рядом с рабочим сохранением Save Game Free.
-/// Зачем нужен в игре: файл можно открыть руками и увидеть, какие данные реально попали в сохранение.
-/// Связи: вызывается CheckpointSaveSystem после успешной записи Save Game Free.
-/// Как используется: каждый слот получает отдельный файл checkpoint_slot_0.json / 1 / 2 в persistentDataPath.
-/// Расширения: кнопка "Открыть папку save", экспорт нескольких файлов, сравнение слотов.
-/// Совет: JSON-правка подходит для отладки и обучения, но не защищает от читов.
-/// Совет: на Windows путь обычно находится внутри профиля пользователя в папке AppData/LocalLow.
-/// </summary>
 public static class CheckpointJsonDebugExporter
 {
     private const string FileNameFormat = "checkpoint_slot_{0}.json";
-
-    /// <summary>
-    /// Контракт: экспортирует pretty-print JSON для слота 0..2 в Application.persistentDataPath.
-    /// Гарантирует лог с полным путём при успешной записи.
-    /// Не заменяет Save Game Free: это только читаемая debug-копия для проверки урока.
-    /// Почему так: persistentDataPath одинаково работает в Editor и в билде, а JSON легко открыть текстовым редактором.
-    /// Потенциальное применение: ручная проверка playerLevel, health, nextSceneName перед уроком загрузки.
-    /// </summary>
     public static bool Export(int slotIndex, CheckpointSaveData data)
     {
         if (slotIndex < 0 || slotIndex >= CheckpointSaveSystem.SlotCount)
         {
             Debug.LogError(
-                $"CheckpointJsonDebugExporter: неверный индекс слота {slotIndex}. " +
-                $"Допустимый диапазон: 0..{CheckpointSaveSystem.SlotCount - 1}.");
+                $"CheckpointJsonDebugExporter: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ {slotIndex}. " +
+                $"пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: 0..{CheckpointSaveSystem.SlotCount - 1}.");
             return false;
         }
 
@@ -51,7 +32,7 @@ public static class CheckpointJsonDebugExporter
         }
         catch (Exception exception)
         {
-            Debug.LogError($"CheckpointJsonDebugExporter: ошибка записи JSON для слота {slotIndex}: {exception.Message}");
+            Debug.LogError($"CheckpointJsonDebugExporter: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ JSON пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ {slotIndex}: {exception.Message}");
             return false;
         }
     }

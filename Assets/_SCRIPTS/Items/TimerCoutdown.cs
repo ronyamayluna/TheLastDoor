@@ -70,4 +70,21 @@ public class TimeScript : MonoBehaviour
     {
         remainingTime += amount;
     }
+
+    public float GetRemainingTime()
+    {
+        return remainingTime;
+    }
+
+    public void SetRemainingTime(float time)
+    {
+        remainingTime = time;
+
+        // если время после загрузки больше 0 —
+        // таймер снова запускается
+        timerIsRunning = remainingTime > 0;
+
+        UpdateDisplay();
+    }
+    
 }

@@ -14,6 +14,16 @@ public class InventoryInv : MonoBehaviour
     private string[] items; //фиксированные слоты
     private int selectedIndex = 0;
 
+    public string[] GetItems()
+    {
+        return items;
+    }
+
+    public int GetSelectedIndex()
+    {
+        return selectedIndex;
+    }
+
     [System.Serializable]
     public class ItemData
     {
@@ -91,6 +101,20 @@ public class InventoryInv : MonoBehaviour
         return false;
     }
 
+    public void LoadInventory(string[] loadedItems, int loadedSelectedIndex)
+    {
+        items = new string[slots.Length];
+
+        for (int i = 0; i < loadedItems.Length && i < items.Length; i++)
+        {
+            items[i] = loadedItems[i];
+        }
+
+        selectedIndex = Mathf.Clamp(loadedSelectedIndex, 0, slots.Length - 1);
+
+        UpdateUI();
+    }
+
     private void UpdateUI()
     {
         for (int i = 0; i < slots.Length; i++)
@@ -118,4 +142,11 @@ public class InventoryInv : MonoBehaviour
         }
         return null;
     }
+
+    public void SetItems(string[] loadedItems)
+    {
+        items = loadedItems;
+        UpdateUI();
+    }
+
 }

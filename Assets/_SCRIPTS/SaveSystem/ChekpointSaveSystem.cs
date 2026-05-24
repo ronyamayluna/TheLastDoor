@@ -1,27 +1,11 @@
 using BayatGames.SaveGameFree;
 using UnityEngine;
 
-/// <summary>
-/// CheckpointSaveSystem
-/// Что делает: сохраняет и читает три слота прогресса через пакет Save Game Free.
-/// Зачем нужен в игре: окончание уровня становится безопасной точкой прогресса между игровыми сессиями.
-/// Связи: GameManager собирает CheckpointSaveData, SaveGame Free пишет данные на диск.
-/// Как используется: GameLoopFlowController или CheckpointTrigger вызывают GameManager, а GameManager вызывает эту систему.
-/// Расширения: кнопка Continue, отдельные профили, краткое описание save для главного меню.
-/// Совет: чаще всего ломаются невалидный индекс слота и случайное изменение строковых ключей.
-/// Совет: при ошибке записи проверить Console, импорт `BayatGames.SaveGameFree` и права записи persistent data.
-/// </summary>
 public static class CheckpointSaveSystem
 {
-    public const int SlotCount = 3;
+    public const int SlotCount = 2;
     private const string SlotKeyPrefix = "checkpoint_progress_";
 
-    /// <summary>
-    /// Контракт: возвращает стабильный ключ Save Game Free для слота 0..2.
-    /// Ключи нельзя менять без миграции: старые сохранения лежат на диске именно под этими строками.
-    /// Почему так: явная формула ключа проще для проверки, чем массив строк в разных местах проекта.
-    /// Потенциальное применение: UI Continue сможет показывать три независимых профиля.
-    /// </summary>
     public static string GetSlotKey(int slotIndex)
     {
         if (!IsValidSlotIndex(slotIndex))
@@ -29,16 +13,6 @@ public static class CheckpointSaveSystem
 
         return SlotKeyPrefix + slotIndex;
     }
-
-    /// <summary>
-    /// Контракт: сохраняет данные в один из трёх слотов и пишет читаемую JSON-копию для проверки.
-    /// Гарантирует true только если успешны оба шага: Save Game Free и debug-JSON.
-    /// Если Save Game Free сработал, но JSON не создан, метод возвращает false, чтобы урок не показывал
-    /// "checkpoint сохранён" без доказуемого файла для smoke-проверки.
-    /// Не гарантирует сохранение врагов, projectile, текущей волны или временных эффектов.
-    /// Почему так: каноничный пакет хранит рабочий save, а JSON рядом помогает увидеть структуру данных.
-    /// Потенциальное применение: save slots для профилей или разных прохождений.
-    /// </summary>
     public static bool Save(int slotIndex, CheckpointSaveData data)
     {
         if (!IsValidSlotIndex(slotIndex))
@@ -59,27 +33,21 @@ public static class CheckpointSaveSystem
             if (!jsonExported)
             {
                 Debug.LogWarning(
-                    $"CheckpointSaveSystem: основной слот Save Game Free '{slotKey}' записан, " +
-                    $"но debug-JSON для слота {slotIndex} не создан. " +
-                    "Проверьте права записи в Application.persistentDataPath и Console.");
+                    $"CheckpointSaveSystem: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅ Save Game Free '{slotKey}' пїЅпїЅпїЅпїЅпїЅпїЅпїЅ, " +
+                    $"пїЅпїЅ debug-JSON пїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ {slotIndex} пїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ. " +
+                    "пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅ Application.persistentDataPath пїЅ Console.");
                 return false;
             }
 
-            Debug.Log($"CheckpointSaveSystem: слот {slotIndex} сохранён через Save Game Free с ключом '{slotKey}'.");
+            Debug.Log($"CheckpointSaveSystem: пїЅпїЅпїЅпїЅ {slotIndex} пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ Save Game Free пїЅ пїЅпїЅпїЅпїЅпїЅпїЅ '{slotKey}'.");
             return true;
         }
         catch (System.Exception exception)
         {
-            Debug.LogError($"CheckpointSaveSystem: ошибка сохранения слота {slotIndex}: {exception.Message}");
+            Debug.LogError($"CheckpointSaveSystem: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ {slotIndex}: {exception.Message}");
             return false;
         }
     }
-
-    /// <summary>
-    /// Контракт: проверяет наличие checkpoint-слота без применения данных к сцене.
-    /// Почему так: урок checkpoint отделяет запись от загрузки, но проверка слота полезна для QA.
-    /// Потенциальное применение: включение кнопки Continue в главном меню.
-    /// </summary>
     public static bool Exists(int slotIndex)
     {
         if (!IsValidSlotIndex(slotIndex))
@@ -93,16 +61,10 @@ public static class CheckpointSaveSystem
         }
         catch (System.Exception exception)
         {
-            Debug.LogError($"CheckpointSaveSystem: ошибка проверки слота {slotIndex}: {exception.Message}");
+            Debug.LogError($"CheckpointSaveSystem: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ {slotIndex}: {exception.Message}");
             return false;
         }
     }
-
-    /// <summary>
-    /// Контракт: читает сохранённые данные, но не переносит игрока и не грузит сцену.
-    /// Почему так: чтение данных безопасно оставить заранее, а сам load-flow относится к следующему уроку.
-    /// Потенциальное применение: экран Continue может показать имя сцены и checkpointId.
-    /// </summary>
     public static bool TryLoad(int slotIndex, out CheckpointSaveData data)
     {
         data = null;
@@ -124,25 +86,19 @@ public static class CheckpointSaveSystem
         }
         catch (System.Exception exception)
         {
-            Debug.LogError($"CheckpointSaveSystem: ошибка чтения слота {slotIndex}: {exception.Message}");
+            Debug.LogError($"CheckpointSaveSystem: пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ {slotIndex}: {exception.Message}");
             data = null;
             return false;
         }
     }
-
-    /// <summary>
-    /// Контракт: проверяет диапазон 0..2 перед любым обращением к Save Game Free.
-    /// Почему так: невалидный индекс создаёт неправильный ключ, а значит save может оказаться не там, где ожидается.
-    /// Потенциальное применение: та же проверка пригодится для UI выбора слота.
-    /// </summary>
     private static bool IsValidSlotIndex(int slotIndex)
     {
         if (slotIndex >= 0 && slotIndex < SlotCount)
             return true;
 
         Debug.LogError(
-            $"CheckpointSaveSystem: неверный индекс слота {slotIndex}. " +
-            $"Допустимый диапазон: 0..{SlotCount - 1}.");
+            $"CheckpointSaveSystem: пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅ {slotIndex}. " +
+            $"пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ: 0..{SlotCount - 1}.");
         return false;
     }
 }
