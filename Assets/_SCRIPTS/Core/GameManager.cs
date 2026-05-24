@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum GameState
 {
@@ -11,6 +12,7 @@ public enum GameState
 
 public class GameManager : MonoBehaviour
 {
+    private int activeSaveSlotIndex = 0; // Индекс текущего слота сохранения
     public static GameManager Instance { get; private set; }
 
     public GameState CurrentState { get; private set; } = GameState.MainMenu;
@@ -107,5 +109,43 @@ public class GameManager : MonoBehaviour
         if (InputManager.Instance != null)
             InputManager.Instance.EnableUIInput();
 
+    }
+
+    public bool TrySaveCheckpointProgress(Vector3 checkpointPosition)
+    {
+        if (!IsValidSaveSlot(activeSaveSlotIndex))
+        {
+            Debug.LogError("GameManager: save slot is not selected. Checkpoint was not saved.", this);
+            return false;
+        }
+
+        if (!TryBuildCheckpointData(
+                $"Checkpoint_{SceneManager.GetActiveScene().name}",
+                checkpointPosition,
+                false,
+                out CheckpointSaveData data))
+            return false;
+
+        return TrySaveCheckpointData(activeSaveSlotIndex, data);
+    }
+    private bool IsValidSaveSlot(int slotIndex)
+    {
+        return slotIndex >= 0 && slotIndex < CheckpointSaveSystem.SlotCount;
+    }
+
+    private bool TryBuildCheckpointData(string id, Vector3 position, bool savedFromLevelExit, out CheckpointSaveData data)
+    {
+        data = new CheckpointSaveData
+        {
+            checkpointId = id,
+            checkpointPosition = position,
+            savedFromLevelExit = savedFromLevelExit
+        };
+        return true;
+    }
+
+    private bool TrySaveCheckpointData(int slotIndex, CheckpointSaveData data)
+    {
+        return CheckpointSaveSystem.Save(slotIndex, data);
     }
 }
