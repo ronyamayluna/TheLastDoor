@@ -58,6 +58,12 @@ public class InputManager : MonoBehaviour
         InitializeInputSystem();
     }
 
+    private bool pauseBlocked = false;
+
+    public void SetPauseBlocked(bool value)
+    {
+        pauseBlocked = value;
+    }
     private void InitializeInputSystem()
     {
         if (inputActions == null)
@@ -196,6 +202,7 @@ public class InputManager : MonoBehaviour
 
     private void OnPausePerformed(InputAction.CallbackContext context)
     {
+        if (pauseBlocked) return;
         OnPausePressed?.Invoke();
     }
 

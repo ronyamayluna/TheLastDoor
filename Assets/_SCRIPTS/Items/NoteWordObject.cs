@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class NoteWorldObject : MonoBehaviour, IInteractable
 {
-    [SerializeField] private GameObject puzzleUIPanel; 
+    [SerializeField] private GameObject puzzleUIPanel;
 
     public void Interact(PlayerInteraction player)
     {
@@ -18,6 +18,8 @@ public class NoteWorldObject : MonoBehaviour, IInteractable
             {
                 controller.DisableMovement();
             }
+
+            InputManager.Instance.SetPauseBlocked(true);
         }
     }
 }

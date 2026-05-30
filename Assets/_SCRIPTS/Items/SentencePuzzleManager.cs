@@ -64,6 +64,8 @@ public class SentencePuzzleManager : MonoBehaviour
             playerController.EnableMovement();
         }
 
+        InputManager.Instance.SetPauseBlocked(false);
+
         if (keyObject != null)
         {
             keyObject.SetActive(true);
