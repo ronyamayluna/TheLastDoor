@@ -6,20 +6,33 @@ public class SpeakingToy : MonoBehaviour, IInteractable
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip voiceClip;
 
-    // Реализация обязательного метода интерфейса взаимодействия
+    private bool isPlaying = false;
+
     public void Interact(PlayerInteraction player)
     {
-        // Проверяем, назначены ли аудиокомпоненты
+        // Если звук уже играет — повторно нажать нельзя
+        if (isPlaying)
+            return;
+
         if (audioSource != null && voiceClip != null)
         {
-            // Воспроизводим звук без прерывания текущих звуков
             audioSource.PlayOneShot(voiceClip);
+
+            // Запоминаем, что сейчас идёт воспроизведение
+            isPlaying = true;
+
+            // Через длину клипа снова разрешаем взаимодействие
+            Invoke(nameof(ResetInteraction), voiceClip.length);
         }
         else
         {
             Debug.LogWarning($"На объекте {gameObject.name} не настроен AudioSource или AudioClip!");
         }
     }
-}
 
+    private void ResetInteraction()
+    {
+        isPlaying = false;
+    }
+}
 

@@ -8,6 +8,8 @@ public enum GameState
     Paused = 2,
     Lost = 3,
     Won = 4,
+
+    
 }
 
 public class GameManager : MonoBehaviour

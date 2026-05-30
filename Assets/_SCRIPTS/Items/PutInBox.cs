@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class PutInBox : MonoBehaviour, IInteractable
@@ -10,12 +11,12 @@ public class PutInBox : MonoBehaviour, IInteractable
     [SerializeField] private GameObject mirror;
     [SerializeField] private string requiredItemID = "mirror";
 
+    [SerializeField] private GameObject needBoxText;
+
     private bool IsSwitched = false;
 
-    // Реализация метода интерфейса взаимодействия
     public void Interact(PlayerInteraction player)
     {
-        // Берем инвентарь у игрока, который на нас посмотрел
         InventoryInv inventory = player.Inventory;
 
         if (inventory == null) return;
@@ -30,7 +31,13 @@ public class PutInBox : MonoBehaviour, IInteractable
             else
             {
                 Debug.Log("Нужна коробка в инвентаре!");
+
+                if (needBoxText != null)
+                {
+                    StartCoroutine(ShowTextForSeconds(4.5f));
+                }
             }
+
             return;
         }
 
@@ -52,6 +59,7 @@ public class PutInBox : MonoBehaviour, IInteractable
     {
         if (boxFObject != null) boxFObject.SetActive(false);
         if (boxSObject != null) boxSObject.SetActive(true);
+
         IsSwitched = true;
     }
 
@@ -59,5 +67,14 @@ public class PutInBox : MonoBehaviour, IInteractable
     {
         if (keyObject != null) keyObject.SetActive(true);
         if (mirror != null) mirror.SetActive(true);
+    }
+
+    private IEnumerator ShowTextForSeconds(float seconds)
+    {
+        needBoxText.SetActive(true);
+
+        yield return new WaitForSeconds(seconds);
+
+        needBoxText.SetActive(false);
     }
 }

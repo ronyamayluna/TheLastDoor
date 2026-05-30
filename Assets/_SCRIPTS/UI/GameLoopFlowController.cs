@@ -4,6 +4,11 @@ using UnityEngine.UI;
 
 public class GameLoopFlowController : MonoBehaviour
 {
+    [Header("Secret Ending UI")]
+    [SerializeField] private GameObject secretEndPanel;
+    [SerializeField] private Button secretEndRestartButton;
+    [SerializeField] private Button secretEndMenuButton;
+
     [Header("Lose UI (scene canvas or prefab)")]
     [SerializeField] private GameObject losePanel;
     [SerializeField] private Button loseRestartButton;
@@ -13,6 +18,9 @@ public class GameLoopFlowController : MonoBehaviour
     [SerializeField] private GameObject winPanel;
     [SerializeField] private Button winMenuButton;
     [SerializeField] private Button winRestartButton;
+
+    [SerializeField] private AudioSource winAudioSource;
+    [SerializeField] private AudioClip winAudioClip;
 
     [Header("Shared UI")]
     [SerializeField] private GameObject pausePanel;
@@ -119,6 +127,24 @@ public class GameLoopFlowController : MonoBehaviour
         if (exitActivationObjectOverride == null && showDebugLogs)
             Debug.LogWarning($"{name}: exitActivationObjectOverride is not assigned. Win can still be requested by trigger.", this);
 
+        if (secretEndPanel == null)
+        {
+            Debug.LogError($"{name}: secretEndPanel is not assigned.", this);
+            isValid = false;
+        }
+
+        if (secretEndRestartButton == null)
+        {
+            Debug.LogError($"{name}: secretEndRestartButton is not assigned.", this);
+            isValid = false;
+        }
+
+        if (secretEndMenuButton == null)
+        {
+            Debug.LogError($"{name}: secretEndMenuButton is not assigned.", this);
+            isValid = false;
+        }
+
         return isValid;
     }
 
@@ -137,6 +163,12 @@ public class GameLoopFlowController : MonoBehaviour
 
         if (winRestartButton != null)
             winRestartButton.onClick.AddListener(HandleWinNextWaveClicked);
+
+        if (secretEndRestartButton != null)
+            secretEndRestartButton.onClick.AddListener(HandleLoseRestartClicked);
+
+        if (secretEndMenuButton != null)
+            secretEndMenuButton.onClick.AddListener(HandleMenuClicked);
     }
 
     private void UnbindButtons()
@@ -152,6 +184,12 @@ public class GameLoopFlowController : MonoBehaviour
 
         if (winRestartButton != null)
             winRestartButton.onClick.RemoveListener(HandleWinNextWaveClicked);
+
+        if (secretEndRestartButton != null)
+            secretEndRestartButton.onClick.RemoveListener(HandleLoseRestartClicked);
+
+        if (secretEndMenuButton != null)
+            secretEndMenuButton.onClick.RemoveListener(HandleMenuClicked);
     }
 
     private void TrySubscribeToPlayerDeath()
@@ -211,6 +249,11 @@ public class GameLoopFlowController : MonoBehaviour
         flowFinished = true;
         HidePausePanelIfAssigned();
 
+        if (winAudioSource != null && winAudioClip != null)
+        {
+            winAudioSource.PlayOneShot(winAudioClip);
+        }
+
         if (GameManager.Instance != null)
             GameManager.Instance.EnterWinState();
 
@@ -221,6 +264,25 @@ public class GameLoopFlowController : MonoBehaviour
 
         if (showDebugLogs)
             Debug.Log($"{name}: win screen shown.", this);
+
+    }
+
+    public void TriggerSecretEnding()
+    {
+        if (flowFinished)
+            return;
+
+        flowFinished = true;
+
+        HidePausePanelIfAssigned();
+
+        if (GameManager.Instance != null)
+            GameManager.Instance.EnterWinState();
+
+        if (secretEndPanel != null)
+            secretEndPanel.SetActive(true);
+
+        Debug.Log("Secret ending screen shown.");
     }
 
     private void HidePausePanelIfAssigned()
@@ -236,6 +298,9 @@ public class GameLoopFlowController : MonoBehaviour
 
         if (winPanel != null)
             winPanel.SetActive(false);
+
+        if (secretEndPanel != null)
+            secretEndPanel.SetActive(false);
     }
 
     private void HandleLoseRestartClicked()

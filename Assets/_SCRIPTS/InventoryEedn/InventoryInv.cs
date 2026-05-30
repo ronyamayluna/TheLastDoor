@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class InventoryInv : MonoBehaviour
 {
@@ -7,11 +8,14 @@ public class InventoryInv : MonoBehaviour
     [SerializeField] private Image[] slots;
     [SerializeField] private Sprite emptySprite;
 
+    [Header("Slot Texts")]
+    [SerializeField] private TMP_Text[] slotTexts;
+
     [Header("Selection")]
     [SerializeField] private Color selectedColor = Color.yellow;
     [SerializeField] private Color normalColor = Color.white;
 
-    private string[] items; //фиксированные слоты
+    private string[] items;
     private int selectedIndex = 0;
 
     public string[] GetItems()
@@ -29,13 +33,14 @@ public class InventoryInv : MonoBehaviour
     {
         public string id;
         public Sprite icon;
+        public string displayName;
     }
 
     [SerializeField] private ItemData[] itemDatabase;
 
     private void Start()
     {
-        items = new string[slots.Length]; // фиксируем размер
+        items = new string[slots.Length];
         UpdateUI();
     }
 
@@ -55,6 +60,7 @@ public class InventoryInv : MonoBehaviour
             }
         }
     }
+
     public bool AddItem(string itemID)
     {
         for (int i = 0; i < items.Length; i++)
@@ -98,6 +104,7 @@ public class InventoryInv : MonoBehaviour
             if (item == itemID)
                 return true;
         }
+
         return false;
     }
 
@@ -129,7 +136,21 @@ public class InventoryInv : MonoBehaviour
                 slots[i].sprite = emptySprite;
             }
 
+            // Подсветка выбранного слота
             slots[i].color = (i == selectedIndex) ? selectedColor : normalColor;
+
+            // Название предмета под выбранным слотом
+            if (slotTexts != null && i < slotTexts.Length)
+            {
+                if (i == selectedIndex && !string.IsNullOrEmpty(items[i]))
+                {
+                    slotTexts[i].text = GetItemName(items[i]);
+                }
+                else
+                {
+                    slotTexts[i].text = "";
+                }
+            }
         }
     }
 
@@ -140,7 +161,19 @@ public class InventoryInv : MonoBehaviour
             if (item.id == id)
                 return item.icon;
         }
+
         return null;
+    }
+
+    private string GetItemName(string id)
+    {
+        foreach (var item in itemDatabase)
+        {
+            if (item.id == id)
+                return item.displayName;
+        }
+
+        return "";
     }
 
     public void SetItems(string[] loadedItems)
@@ -148,5 +181,4 @@ public class InventoryInv : MonoBehaviour
         items = loadedItems;
         UpdateUI();
     }
-
 }
